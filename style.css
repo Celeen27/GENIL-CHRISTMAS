@@ -129,6 +129,7 @@ img {
   margin: 0 auto;
   padding: 0 5rem;
 }
+
 /* HEADER */
 .header {
   padding: 2rem 0;
@@ -163,6 +164,7 @@ img {
   left: 0;
   transition: all 0.3s ease;
 }
+.header__nav li a:hover::after,
 .header__nav li a.active::after {
   width: 100%;
   transition: all 0.3s ease;
