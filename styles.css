@@ -169,6 +169,75 @@ img {
   width: 100%;
   transition: all 0.3s ease;
 }
+/* HEADER MOBILE */
+.header .toggle__menu span{
+  background-color: var(--clr-primary);
+  width: 3rem;
+  height: 0.3rem;
+  display: block;
+  border: 2px solid var(--clr-primary);
+  border-radius: 1rem;
+  transition: all .5s ease;
+}
+.header .toggle__menu{
+  display: none;
+}
+@media screen and (max-width: 520px){
+  .header .toggle__menu{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header{
+  position: fixed;
+  background-color: var(--clr-light);
+  width: 100%;
+  z-index: 99;
+  }
+  .header__nav{
+  position: fixed;
+  flex-direction: column;
+  background-color: var(--clr-light);
+  top: 0;
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  right: -100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22rem;
+  transform: translateY(-14rem);
+  transition: all 0.5s ease;
+  }
+.header img{
+  width: 10rem;
+}
+.header__nav li a{
+  font-size: 2rem;
+}
+.header__nav li a::after{
+  background-color: unset;
+}
+.header__nav li a:hover,
+.header__nav li a.active{
+  color: var(--clr-secondary);
+  }
+.header__nav.open{
+  right: 0;
+  transition: all 0.5s ease;
+}
+  .toggle__menu.open span:first-child{
+  transform: translate(0, 6px) rotate(225deg);
+  transition: all 0.5s ease;
+}
+.toggle__menu.open span:nth-child(2){
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.toggle__menu.open span:last-child{
+  transform: translate(0, -11.5px)rotate(-225deg);
+}
+}
 
 .traditionBanner {
   padding: 5rem 0;
@@ -199,10 +268,6 @@ img {
 }
 
 /* TRADITIONS */
-.traditions {
-  margin-top: 2rem;
-  padding-top: 1rem;
-}
 .traditions__wrapper {
   display: flex;
   grid-template-columns: 2.5fr 1fr 1fr;
@@ -241,6 +306,33 @@ img {
   color: var(--clr-primary);
   margin-top: 1rem;
 }
+
+/* TRADITION MOBILE */
+@media screen and (max-width:520px){
+.tradition{
+  margin: 3rem ;
+}
+.traditionBanner__wrapper{
+  text-align: center;
+  margin-top: 5rem 0;
+}
+.traditionBanner__wrapper img{
+  width: 35rem;
+  margin-top: 5rem;
+}
+.tradition__cards{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.traditionBanner__wrapper h1{
+  font-size: var(--h3);
+  margin-top: 2rem;
+}
+.traditionBanner__wrapper p{
+  margin-bottom: 2rem;
+}
+}
+
 /* FOOTERS */
 .footer {
   background-color: var(--clr-secondary);
@@ -288,6 +380,13 @@ img {
 .footer__bottom--b li:nth-child(2) {
   margin-top: 3rem;
 }
+/* FOOTER MOBILE */
+@media screen and (max-width:520px){
+  .footer__bottom {
+  display: grid;
+  grid-template-columns: 2fr;
+}
+}
 
 /* FD */
 .FDBanner {
@@ -295,7 +394,6 @@ img {
   height: 72rem;
 }
 .FDBanner {
-  padding: 5rem 0;
   height: 50rem;
 }
 .FDBanner__wrapper {
@@ -304,7 +402,7 @@ img {
   align-items: center;
 }
 .FDBanner__wrapper img {
-  width: 45rem;
+  width: 40rem;
 }
 .FDBanner__wrapper h1 {
   text-align: center;
@@ -364,6 +462,27 @@ img {
   margin-top: 1rem;
 }
 
+/* FD MOBILE */
+@media screen and (max-width:520px){
+.FDBanner{
+  margin: 3rem 0;
+}
+.FD__wrapper{
+    text-align: center;
+margin-top: 5rem 0;
+}
+.FD__cards{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.FDBanner__wrapper h1{
+  font-size: var(--h3);
+  margin-top: 2rem;
+}
+.FD__cards--details{
+  text-align: left;
+}
+}
 /* Decor*/
 .decorBanner {
   padding-top: 7rem;
@@ -409,10 +528,9 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
-  padding: 5rem 0;
 }
 .decorcards img {
-  width: 80rem;
+  width: 40rem;
   border-bottom: 4px solid var(--clr-secondary);
 }
 .decor__details {
@@ -438,13 +556,37 @@ img {
   color: var(--clr-primary);
   margin-top: 1rem;
 }
+/* DECOR MOBILE */
+@media screen and (max-width:520px){
+.decor{
+  margin: 3rem 0;
+}
+.decorBanner__wrapper{
+  text-align: center;
+  margin-top: 5rem 0;
+}
+.decorBanner__wrapper img{
+  width: 35rem;
+  margin-top: 5rem;
+}
+.decor_card{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.decorBanner__wrapper h1{
+  font-size: var(--h3);
+  margin-top: 2rem;
+}
+.decorBanner__wrapper p{
+    margin-bottom: 2rem;
+}
+}
 /* Carols*/
 .carolsBanner {
   padding-top: 7rem;
   height: 72rem;
 }
 .carolsBanner {
-  padding: 5rem 0;
   height: 50rem;
 }
 .carolsBanner__wrapper {
@@ -453,7 +595,7 @@ img {
   align-items: center;
 }
 .carolsBanner__wrapper img {
-  width: 45rem;
+  width: 50rem;
 }
 .carolsBanner__wrapper h1 {
   text-align: center;
@@ -472,7 +614,6 @@ img {
 
 .carols {
   margin-top: 2rem;
-  padding-top: 1rem;
 }
 .carols__wrapper {
   display: flex;
@@ -481,7 +622,7 @@ img {
 }
 .carols_card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   gap: 3rem;
   padding: 5rem 0;
 }
@@ -511,4 +652,29 @@ img {
 .carols__details p {
   color: var(--clr-primary);
   margin-top: 1rem;
+}
+/* DECOR MOBILE */
+@media screen and (max-width:520px){
+.carols{
+  margin: 3rem 0;
+}
+.carolsBanner__wrapper{
+  text-align: center;
+  margin-top: 5rem 0;
+}
+.carolsBanner__wrapper img{
+  width: 35rem;
+  margin-top: 5rem;
+}
+.carols_card{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.carolsBanner__wrapper h1{
+  font-size: var(--h3);
+  margin-top: 2rem;
+}
+.carolsBanner__wrapper p{
+  margin-bottom: 2rem;
+}
 }
